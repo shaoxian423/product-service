@@ -5,6 +5,9 @@ from typing import List
 
 app = FastAPI()
 
+# Load environment variables
+PORT = int(os.getenv("PORT", 3030))  # 从环境变量获取 PORT，默认为 3030
+
 # Define a CORS middleware configuration
 app.add_middleware(
     CORSMiddleware,
